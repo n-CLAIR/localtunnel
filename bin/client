@@ -29,10 +29,6 @@ var argv = require('yargs')
     .option('print-requests', {
         describe: 'Print basic request info',
     })
-    .option('count', {
-        describe: 'Try to connect count',
-        default: 50,
-    })
     .require('port')
     .boolean('print-requests')
     .help('help', 'Show this help and exit')
@@ -48,7 +44,6 @@ if (typeof argv.port !== 'number') {
 var opt = {
     host: argv.host,
     port: argv.port,
-    count: argv.count,
     local_host: argv['local-host'],
     subdomain: argv.subdomain,
 };
